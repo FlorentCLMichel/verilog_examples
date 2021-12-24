@@ -1,5 +1,7 @@
 // Signed numbers example
 
+`include "addbit.v"
+
 module signed_numbers;
 
 reg [31:0] a; // a 32-bit register
