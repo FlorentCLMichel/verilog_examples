@@ -31,7 +31,7 @@ parameter N_BITS = 8;
 
 reg [N_BITS-1:0] a = 8'b00100011, b = 8'b00010010;
 wire [N_BITS:0] c, d;
-integer r, SEED = 35, N_TESTS = 1000;
+integer r, SEED = 35, N_TESTS = 10000;
 
 add #(N_BITS) A (a, b, c);
 assign d = a+b;
@@ -49,8 +49,8 @@ end
 
 initial begin
     $urandom(SEED);
-    $display("a\tb\tc\ta+b\tok");
-    $monitor("%h\t%h\t%h\t%h\t%b", a, b, c, d, e);
+    $display("time\ta\tb\tc\ta+b\tok");
+    $monitor("%h\t%h\t%h\t%h\t%h\t%b", $time, a, b, c, d, e);
     #(N_TESTS) $display("TEST PASSED");
     $finish;
 end
