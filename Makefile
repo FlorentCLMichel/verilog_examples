@@ -1,8 +1,8 @@
 build_run: build
-	vvp ./a.out
+	vvp a.out
 
 build: 
-	iverilog ${file}
+	iverilog -g2012 ${file}
 
 run:
 	vvp ${file}
